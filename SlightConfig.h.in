@@ -1,3 +1,6 @@
+// SlightConfig.h: Copyright 2020 Micah Switzer
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #define Slight_VERSION_MAJOR @Slight_VERSION_MAJOR@
 #define Slight_VERSION_MINOR @Slight_VERSION_MINOR@
 
