@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(DLProg VERSION 0.1)
+project(Slight VERSION 0.1)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-option(USE_MYFUNC "Use dlprog provided functions" ON)
+option(USE_MYFUNC "Use slight provided functions" ON)
 
-configure_file(DLProgConfig.h.in DLProgConfig.h)
+configure_file(SlightConfig.h.in SlightConfig.h)
 
 if(USE_MYFUNC)
   add_subdirectory(Functions)
@@ -16,11 +16,11 @@ if(USE_MYFUNC)
        "${PROJECT_SOURCE_DIR}/Functions")
 endif()
 
-add_executable(DLProg DLProg.cpp)
+add_executable(Slight Slight.cpp)
 
-target_link_libraries(DLProg PUBLIC ${EXTRA_LIBS})
+target_link_libraries(Slight PUBLIC ${EXTRA_LIBS})
 
-target_include_directories(DLProg PUBLIC
+target_include_directories(Slight PUBLIC
                            "${PROJECT_BINARY_DIR}"
                            "${EXTRA_INCLUDES}"
                            )

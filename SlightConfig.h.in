@@ -1,0 +1,3 @@
+#define Slight_VERSION_MAJOR @Slight_VERSION_MAJOR@
+#define Slight_VERSION_MINOR @Slight_VERSION_MINOR@
+

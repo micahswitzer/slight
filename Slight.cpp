@@ -1,5 +1,5 @@
 #include <iostream>
-#include <DLProgConfig.h>
+#include <SlightConfig.h>
 #ifdef USE_MYFUNC
 #  include "Functions.h"
 #endif
@@ -7,8 +7,8 @@
 int main(int argc, char** argv) {
     if (argc < 2) {
         std::cout << argv[0] << " Version " << 
-            DLProg_VERSION_MAJOR << "." <<
-            DLProg_VERSION_MINOR << std::endl;
+            Slight_VERSION_MAJOR << "." <<
+            Slight_VERSION_MINOR << std::endl;
         std::cout << "Usage: " << argv[0] <<
             " value" << std::endl;
         return 1;
