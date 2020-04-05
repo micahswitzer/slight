@@ -11,7 +11,7 @@ Currently this system is built with CMake, so to build follow these steps:
 
 and then
 
-    ./ slight
+    ./slight
 
 to run it.
 
