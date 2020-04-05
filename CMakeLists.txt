@@ -16,7 +16,7 @@ if(USE_MYFUNC)
        "${PROJECT_SOURCE_DIR}/Functions")
 endif()
 
-add_executable(Slight Slight.cpp)
+add_executable(Slight slight.cpp)
 
 target_link_libraries(Slight PUBLIC ${EXTRA_LIBS})
 
