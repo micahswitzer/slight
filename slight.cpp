@@ -3,9 +3,14 @@
 
 #include <iostream>
 #include <SlightConfig.h>
+#include <RF24/RF24.h>
 #ifdef USE_MYFUNC
 #  include "Functions.h"
 #endif
+
+RF24 radio(59,0);
+
+const uint8_t endpoints[][6] = { "node1", "node2" };
 
 int main(int argc, char** argv) {
     if (argc < 2) {
@@ -16,6 +21,18 @@ int main(int argc, char** argv) {
             " value" << std::endl;
         return 1;
     }
+
+    try {
+        radio.begin();
+    } catch (SPIException spiEx) {
+        std::cout << "Couldn't open the SPI device (is SPIDEV enabled?)" << std::endl;
+        return 1;
+    }
+
+    radio.setPALevel(RF24_PA_LOW);
+
+    radio.openReadingPipe(1, endpoints[0]);
+    radio.startListening();
 
     const double inputValue = std::stod(argv[1]);
 
